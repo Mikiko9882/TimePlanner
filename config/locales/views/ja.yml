@@ -1,0 +1,69 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '登録'
+    logout: 'ログアウト'
+    show: '詳細'
+    edit: '編集'
+    delete: '削除'
+    password_reset: 'パスワードリセット'
+    unspecified: '指定なし'
+    search_word: '検索ワード'
+    message:
+      require_login: 'ログインしてください'
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
+      delete_confirm: '削除しますか？'
+      not_authorized: '権限がありません'
+  users:
+    new:
+      title: '新規登録画面'
+      to_login_page: 'ログインページへ'
+    create:
+      success: '新規登録が完了しました'
+      fail: '新規登録に失敗しました'
+    show:
+      title: 'ユーザー詳細'
+    index:
+      title: 'ユーザー一覧'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      to_register_page: '登録ページへ'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
+  terms_of_service:
+    show:
+      title: '利用規約'
+  privacy_policy:
+    show:
+      title: 'プライバシーポリシー'
+  admin:
+    user_sessions:
+      new:
+        title: 'ログイン'
+      create:
+        success: 'ログインしました'
+        fail: 'ログインに失敗しました'
+      destroy:
+        success: 'ログアウトしました'
+    dashboards:
+      index:
+        title: 'ダッシュボード'
+    users:
+      index:
+        title: 'ユーザー一覧'
+      edit:
+        title: 'ユーザー編集'
+      show:
+        title: 'ユーザー詳細'
+  rooms:
+    index:
+      title: 'メッセージ一覧'
+    
