@@ -8,7 +8,7 @@ class Admin::UserSessionsController < Admin::BaseController
   def create
     @user = login(params[:login_id], params[:password])
     if @user
-      redirect_to admin_root_path, success: t('.success')
+      redirect_to admin_users_path, success: t('.success')
     else
       flash.now[:danger] = t('.fail')
       render :new, status: :unprocessable_entity

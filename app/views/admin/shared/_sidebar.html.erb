@@ -10,7 +10,6 @@
           <a href="#" class="nav-link">
             <div class="d-flex align-items-center gap-0">
               <%= link_to admin_users_path, class: "nav-link #{active_if('admin/users')}" do %>
-                <svg class="bi" width="16" height="16"><use xlink:href="#people"/></svg>
                 <%= t('admin.users.index.title') %>
               <% end %>      
             </div>
@@ -23,7 +22,6 @@
         <li class="nav-item">
           <a href="#" class="nav-link">
             <div class="d-flex align-items-center gap-0">
-              <svg class="bi" width="16" height="16"><use xlink:href="#door-closed"/></svg>
               <%= link_to t('defaults.logout'), admin_logout_path, class: 'nav-link', data: { turbo_method: :delete } %>
             </div>
           </a>
