@@ -9,16 +9,10 @@
         <li class="nav-item">
           <a href="#" class="nav-link">
             <div class="d-flex align-items-center gap-0">
-              <svg class="bi" width="16" height="16"><use xlink:href="#file-earmark-text"/></svg>
-              <%= link_to t('admin.test_results.index.title'), '#', class: "nav-link" %>
-            </div>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <div class="d-flex align-items-center gap-0">
-              <svg class="bi" width="16" height="16"><use xlink:href="#people"/></svg>
-              <%= link_to t('admin.users.index.title'), '#', class: "nav-link" %>
+              <%= link_to admin_users_path, class: "nav-link #{active_if('admin/users')}" do %>
+                <svg class="bi" width="16" height="16"><use xlink:href="#people"/></svg>
+                <%= t('admin.users.index.title') %>
+              <% end %>      
             </div>
           </a>
         </li>
