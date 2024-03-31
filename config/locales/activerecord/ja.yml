@@ -1,0 +1,17 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+    attributes:
+      user:
+        login_id: 'ログインID'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        user_name: '名前'
+        role: '権限'
+        created_at: '作成日時'
+    enums:
+      user:
+        role:
+          general: '一般'
+          admin: '管理者'
