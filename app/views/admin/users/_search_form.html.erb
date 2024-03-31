@@ -1,0 +1,10 @@
+<%= search_form_for @q, url: admin_users_path do |f| %>
+  <div class="row">
+    <div class="col-auto">
+      <%= f.search_field :user_name_cont, class: 'form-control', placeholder: '名前で検索' %>
+    </div>
+    <div class="col-auto">
+      <%= f.submit class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>

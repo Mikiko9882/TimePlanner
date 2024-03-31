@@ -16,4 +16,8 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   enum role: { general: 0, admin: 1 }
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "crypted_password", "id", "id_value", "login_id", "role", "salt", "updated_at", "user_name"]
+  end
 end
