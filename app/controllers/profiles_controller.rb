@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :set_user, only: %i[edit update]
   before_action :set_lessons, only: [:edit]
+  before_action :set_subjects, only: [:edit]
   
   def edit; end
   
@@ -24,8 +25,12 @@ class ProfilesController < ApplicationController
   def set_lessons
     @lessons = Lesson.all
   end
+
+  def set_subjects
+    @subjects = Subject.all
+  end
   
   def user_params
-    params.require(:user).permit(:login_id, :user_name, lesson_ids: [])
+    params.require(:user).permit(:login_id, :user_name, lesson_ids: [], subject_ids: [])
   end
 end

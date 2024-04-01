@@ -4,6 +4,9 @@ class User < ApplicationRecord
   has_many :user_lessons
   has_many :lessons, :through => :user_lessons
 
+  has_many :user_subjects
+  has_many :subjects, :through => :user_subjects
+
   validates :login_id, uniqueness: true, presence: true
   validate :login_id_format
 

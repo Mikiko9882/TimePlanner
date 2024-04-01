@@ -24,6 +24,18 @@
             <% end %>
           </td>
         </tr>
+        <tr>
+          <th scope="row"><%= t(User.human_attribute_name(:subject_name)) %></th>
+          <td>
+            <% if current_user.subjects.any? %>
+              <% current_user.subjects.each do |subject| %>
+                <%= subject.subject_name %><br>
+              <% end %>
+            <% else %>
+              <%= '登録されていません' %>
+            <% end %>
+          </td>
+        </tr>
       </table>
     </div>
   </div>

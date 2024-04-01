@@ -12,6 +12,7 @@ ja:
         role: '権限'
         created_at: '作成日時'
         lesson_name: '担当クラス'
+        subject_name: '担当教科'
     enums:
       user:
         role:
