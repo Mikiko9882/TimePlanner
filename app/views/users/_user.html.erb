@@ -1,0 +1,16 @@
+<tr>
+  <td>
+    <%= user.id %>
+  </td>
+  <td>
+    <%= user.user_name %>
+  </td>
+  <td>
+    <% user.teachers.each do |teacher| %>
+      <%= teacher.lessons.map(&:lesson_name).join(', ') %>
+    <% end %>
+  </td>
+  <td>
+    
+  </td>
+</tr>
