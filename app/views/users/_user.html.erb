@@ -11,6 +11,8 @@
     <% end %>
   </td>
   <td>
-    
+    <% user.teachers.each do |teacher| %>
+      <%= teacher.subjects.map(&:subject_name).join(', ') %>
+    <% end %>
   </td>
 </tr>

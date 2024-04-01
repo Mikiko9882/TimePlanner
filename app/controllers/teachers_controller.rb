@@ -3,6 +3,7 @@ class TeachersController < ApplicationController
   def new
     @teacher = Teacher.new
     @lessons = Lesson.all
+    @subjects = Subject.all
   end
     
   def create
@@ -18,6 +19,6 @@ class TeachersController < ApplicationController
   private
     
   def teacher_params
-    params.require(:teacher).permit(:user_id, lesson_ids: [])
+    params.require(:teacher).permit(:user_id, lesson_ids: [], subject_ids: [])
   end
 end
