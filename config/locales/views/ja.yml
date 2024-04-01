@@ -28,7 +28,7 @@ ja:
     show:
       title: 'ユーザー詳細'
     index:
-      title: 'ユーザー一覧'
+      title: '教師一覧'
   user_sessions:
     new:
       title: 'ログイン'
@@ -38,6 +38,11 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  profiles:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'
   terms_of_service:
     show:
       title: '利用規約'
@@ -63,7 +68,5 @@ ja:
         title: 'ユーザー編集'
       show:
         title: 'ユーザー詳細'
-  rooms:
-    index:
-      title: 'メッセージ一覧'
+  
     

@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
-  resources :users, only: %i[new create index]
+  resources :users, only: %i[index new create index]
+  resource :profile, only: %i[show edit update]
 
   namespace :admin do
     root to: 'dashboards#index'

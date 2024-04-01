@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
   
+  def index
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true).order(created_at: :desc)
+  end
+  
   def new
     @user = User.new
   end

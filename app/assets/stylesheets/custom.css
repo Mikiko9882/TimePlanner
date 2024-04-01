@@ -1,3 +1,13 @@
 .container-fluid {
   margin-top: 57px; /* 上側の余白を追加 */
 }
+
+.field label {
+  font-size: 18px; /* ラベルのフォントサイズを大きくする */
+}
+
+.field select {
+  font-size: 18px; /* フォントサイズを大きくする */
+  padding: 10px; /* 上下左右の余白を追加 */
+  width: 100%; /* 幅を100%にする */
+}
