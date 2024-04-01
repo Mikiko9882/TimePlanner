@@ -11,6 +11,7 @@ ja:
         user_name: '名前'
         role: '権限'
         created_at: '作成日時'
+        lesson_name: '担当クラス'
     enums:
       user:
         role:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_01_043023) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_01_124843) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,35 +20,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_01_043023) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "subjects", force: :cascade do |t|
-    t.string "subject_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "teacher_lessons", force: :cascade do |t|
-    t.bigint "teacher_id", null: false
+  create_table "user_lessons", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.bigint "lesson_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lesson_id"], name: "index_teacher_lessons_on_lesson_id"
-    t.index ["teacher_id"], name: "index_teacher_lessons_on_teacher_id"
-  end
-
-  create_table "teacher_subjects", force: :cascade do |t|
-    t.bigint "teacher_id", null: false
-    t.bigint "subject_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["subject_id"], name: "index_teacher_subjects_on_subject_id"
-    t.index ["teacher_id"], name: "index_teacher_subjects_on_teacher_id"
-  end
-
-  create_table "teachers", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_teachers_on_user_id"
+    t.index ["lesson_id"], name: "index_user_lessons_on_lesson_id"
+    t.index ["user_id"], name: "index_user_lessons_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,9 +40,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_01_043023) do
     t.index ["login_id"], name: "index_users_on_login_id", unique: true
   end
 
-  add_foreign_key "teacher_lessons", "lessons"
-  add_foreign_key "teacher_lessons", "teachers"
-  add_foreign_key "teacher_subjects", "subjects"
-  add_foreign_key "teacher_subjects", "teachers"
-  add_foreign_key "teachers", "users"
+  add_foreign_key "user_lessons", "lessons"
+  add_foreign_key "user_lessons", "users"
 end

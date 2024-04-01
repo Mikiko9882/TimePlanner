@@ -38,10 +38,11 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
-  teachers:
-    new:
-      title: 'クラスと教科を登録'
-      to_register_page: '登録ページへ'
+  profiles:
+    show:
+      title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'
   terms_of_service:
     show:
       title: '利用規約'
@@ -67,7 +68,5 @@ ja:
         title: 'ユーザー編集'
       show:
         title: 'ユーザー詳細'
-  rooms:
-    index:
-      title: 'メッセージ一覧'
+  
     

@@ -13,8 +13,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
 
   resources :users, only: %i[index new create index]
-
-  resources :teachers, only: [:new, :create, :show]
+  resource :profile, only: %i[show edit update]
 
   namespace :admin do
     root to: 'dashboards#index'

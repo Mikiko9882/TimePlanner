@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
-  has_many :teachers
+  has_many :user_lessons
+  has_many :lessons, :through => :user_lessons
 
   validates :login_id, uniqueness: true, presence: true
   validate :login_id_format
