@@ -40,7 +40,7 @@ ja:
       success: 'ログアウトしました'
   teachers:
     new:
-      title: 'クラスを登録'
+      title: 'クラスと教科を登録'
       to_register_page: '登録ページへ'
   terms_of_service:
     show:

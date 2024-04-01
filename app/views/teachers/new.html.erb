@@ -4,29 +4,38 @@
     <h1 class="text-center text-xl-start"><%= t '.title' %></h1>
     
     <%= form_with(model: @teacher, url: teachers_path, local: true) do |form| %>
-      <div class="field">
-        <%= form.label :user_id, 'User ID' %>
-        <%= form.select :user_id, User.all.map { |user| [user.user_name, user.id] }, prompt: 'Select User' %>
+      <div class="col-12">
+        <div class="position-relative mb-4">
+          <div class="field">
+            <%= form.label :user_id, '名前を選ぶ' %>
+            <%= form.select :user_id, User.all.map { |user| [user.user_name, user.id] }, prompt: 'Select User' %>
+          </div>
+        </div>
       </div>
 
-      <div class="field">
-        <%= form.label :lesson_ids, 'Select Lessons' %>
-        <% @lessons.each do |lesson| %>
-          <%= check_box_tag 'teacher[lesson_ids][]', lesson.id, @teacher.lessons.include?(lesson) %>
-          <%= lesson.lesson_name %><br>
-        <% end %>
-      </div>
-
-      <div class="field">
-        <%= form.label :subject_ids, 'Select Subjects' %>
-        <% @subjects.each do |subject| %>
-          <%= check_box_tag 'teacher[subject_ids][]', subject.id, @teacher.subjects.include?(subject) %>
-          <%= subject.subject_name %><br>
-        <% end %>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="field">
+            <h5>クラスを選択</h5>
+            <%= form.collection_check_boxes :lesson_ids, Lesson.all, :id, :lesson_name do |b| %>
+              <%= b.label { b.check_box + b.text } %><br>
+            <% end %>
+          </div>
+        </div>
+    
+  
+        <div class="col-md-6 mb-4">
+          <div class="field">
+            <h5>科目を選択</h5>
+            <%= form.collection_check_boxes :subject_ids, Subject.all, :id, :subject_name do |b| %>
+              <%= b.label { b.check_box + b.text } %><br>
+            <% end %>
+          </div>
+        </div>
       </div>
 
       <div class="actions">
-        <%= form.submit %>
+        <%= form.submit (t 'defaults.register'), class: "btn btn-primary shadow-primary btn-lg w-100" %>
       </div>
     <% end %>
   </div>
