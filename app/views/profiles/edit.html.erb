@@ -11,23 +11,27 @@
         <%= f.text_field :user_name, class: 'form-control mb-3' %>
 
         <div class="row">
-          <h5>担当クラス</h5>
-          <% @lessons.each do |lesson| %>
-            <div>
-              <%= check_box_tag "user[lesson_ids][]", lesson.id, @user.lessons.include?(lesson) %>
-              <%= lesson.lesson_name %>
-            </div>
-          <% end %>
-          <h5>担当教科</h5>
-          <% @subjects.each do |subject| %>
-            <div>
-              <%= check_box_tag "user[subject_ids][]", subject.id, @user.subjects.include?(subject) %>
-              <%= subject.subject_name %>
-            </div>
-          <% end %>
+          <div class="col-md-6">
+            <h5>担当クラス</h5>
+            <% @lessons.each do |lesson| %>
+              <div>
+                <%= check_box_tag "user[lesson_ids][]", lesson.id, @user.lessons.include?(lesson), id: "lesson_#{lesson.id}" %>
+                <%= lesson.lesson_name %>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-6">
+            <h5>担当教科</h5>
+            <% @subjects.each do |subject| %>
+              <div>
+                <%= check_box_tag "user[subject_ids][]", subject.id, @user.subjects.include?(subject), id: "subject_#{subject.id}" %>
+                <%= subject.subject_name %>
+              </div>
+            <% end %>
+          </div>
         </div>
 
-        <%= f.submit class: 'btn btn-primary' %>
+        <%= f.submit class: 'btn btn-primary mt-3 w-100' %>
       <% end %>
     </div>
   </div>
