@@ -28,7 +28,7 @@ ja:
     show:
       title: 'ユーザー詳細'
     index:
-      title: 'ユーザー一覧'
+      title: '教師一覧'
   user_sessions:
     new:
       title: 'ログイン'
@@ -38,6 +38,10 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  teachers:
+    new:
+      title: 'クラスを登録'
+      to_register_page: '登録ページへ'
   terms_of_service:
     show:
       title: '利用規約'

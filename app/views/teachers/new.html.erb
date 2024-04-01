@@ -1,0 +1,25 @@
+<% content_for(:title, t('.title')) %>
+<div class="container d-flex flex-wrap justify-content-center justify-content-center pt-5">
+  <div class="w-100 align-self-end pt-1 pt-md-4 pb-4" style="max-width: 526px;">
+    <h1 class="text-center text-xl-start"><%= t '.title' %></h1>
+    
+    <%= form_with(model: @teacher, url: teachers_path, local: true) do |form| %>
+      <div class="field">
+        <%= form.label :user_id, 'User ID' %>
+        <%= form.select :user_id, User.all.map { |user| [user.user_name, user.id] }, prompt: 'Select User' %>
+      </div>
+
+      <div class="field">
+        <%= form.label :lesson_ids, 'Select Lessons' %>
+        <% @lessons.each do |lesson| %>
+          <%= check_box_tag 'teacher[lesson_ids][]', lesson.id, @teacher.lessons.include?(lesson) %>
+          <%= lesson.lesson_name %><br>
+        <% end %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
